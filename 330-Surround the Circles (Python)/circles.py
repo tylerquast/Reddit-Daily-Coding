@@ -3,6 +3,9 @@ circle1 = [1,1,2]
 circle2 = [2,4,5]
 circle3 = [-1,-3,2]
 circle4 = [5,2,1]
+
+
+#Declares Variables. Also puts all circles into an array
 allCircles = [circle1,circle2,circle3,circle4]
 left = 0
 right = 0
@@ -11,7 +14,7 @@ bot = 0
 
 
 
-
+#loops through each circle and finds the largest value in each direction
 for circle in allCircles:
 	if(circle[0]+circle[2]>right):
 		right = circle[0]+circle[2]
@@ -22,11 +25,11 @@ for circle in allCircles:
 	if(circle[1]-circle[2]<bot):
 		bot = circle[1]-circle[2]
 
-
+#prints answer 
 print '(',left,',',bot,'), (',left,',',top,'), (',right,',',top,'), (',right,',',bot,')' 
 
 
-
+#Start of drawing
 myTurtle = turtle.Turtle()
 myTurtle.speed('fastest')
 
@@ -46,7 +49,9 @@ myTurtle.right(90)
 myTurtle.forward(abs(right-left)*50)
 myTurtle.right(90)
 myTurtle.forward(abs(top-bot)*50)
+#End of drawing
 
+#Display Drawing
 turtle.getscreen()._root.mainloop()
 
 
